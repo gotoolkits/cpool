@@ -61,8 +61,9 @@ func (t *RingBackend) GetConnPoolsByName(name string) ([]*conn_pool.ConnPool, er
 	return conns, nil
 }
 
-func (t *RingBackend) InitRing() {
+func (t *RingBackend) InitRing(replicas int) {
 	var tmp_ring *consistent.Consistent = consistent.New()
+	tmp_ring.NumberOfReplicas = replicas
 
 	t.RLock()
 	for name, _ := range t.Addrs {
