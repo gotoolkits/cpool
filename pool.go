@@ -2,10 +2,10 @@ package cpool
 
 import (
 	"errors"
+	"github.com/open-falcon/consistent"
 	"github.com/toolkits/file"
 	"github.com/toolkits/logger"
 	"github.com/toolkits/rpool/conn_pool"
-	"stathat.com/c/consistent"
 	"strings"
 	"sync"
 )
